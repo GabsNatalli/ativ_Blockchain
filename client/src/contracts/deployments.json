@@ -1,0 +1,7 @@
+{
+  "network": "sepolia",
+  "chainId": 11155111,
+  "deployedAt": "2025-11-23T14:00:00.000Z",
+  "identityRegistry": "0xf01d18d69ED67288D3ba0c880C22414260F88dee",
+  "eventStorage": "0x3e052A6E9564B91605d5a735e4930A79E6c3D3Df"
+}

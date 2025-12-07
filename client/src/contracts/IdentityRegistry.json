@@ -1,0 +1,228 @@
+{
+  "address": "0xf01d18d69ED67288D3ba0c880C22414260F88dee",
+  "abi": [
+    {
+      "type": "error",
+      "name": "IdentityAlreadyExists",
+      "inputs": []
+    },
+    {
+      "type": "error",
+      "name": "IdentityNotFound",
+      "inputs": []
+    },
+    {
+      "type": "error",
+      "name": "MatriculaAlreadyInUse",
+      "inputs": []
+    },
+    {
+      "type": "event",
+      "anonymous": false,
+      "name": "IdentityRegistered",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "account",
+          "indexed": true
+        },
+        {
+          "type": "string",
+          "name": "matricula",
+          "indexed": false
+        },
+        {
+          "type": "string",
+          "name": "name",
+          "indexed": false
+        }
+      ]
+    },
+    {
+      "type": "event",
+      "anonymous": false,
+      "name": "IdentityUpdated",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "account",
+          "indexed": true
+        },
+        {
+          "type": "string",
+          "name": "matricula",
+          "indexed": false
+        },
+        {
+          "type": "string",
+          "name": "name",
+          "indexed": false
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "getAllIdentities",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "type": "tuple[]",
+          "name": "",
+          "components": [
+            {
+              "type": "address",
+              "name": "account"
+            },
+            {
+              "type": "string",
+              "name": "name"
+            },
+            {
+              "type": "string",
+              "name": "matricula"
+            },
+            {
+              "type": "string",
+              "name": "curso"
+            },
+            {
+              "type": "uint256",
+              "name": "createdAt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "getIdentity",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [
+        {
+          "type": "address",
+          "name": "account"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "tuple",
+          "name": "info",
+          "components": [
+            {
+              "type": "address",
+              "name": "account"
+            },
+            {
+              "type": "string",
+              "name": "name"
+            },
+            {
+              "type": "string",
+              "name": "matricula"
+            },
+            {
+              "type": "string",
+              "name": "curso"
+            },
+            {
+              "type": "uint256",
+              "name": "createdAt"
+            }
+          ]
+        },
+        {
+          "type": "bool",
+          "name": "exists"
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "getIdentityByMatricula",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [
+        {
+          "type": "string",
+          "name": "matricula"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "tuple",
+          "name": "info",
+          "components": [
+            {
+              "type": "address",
+              "name": "account"
+            },
+            {
+              "type": "string",
+              "name": "name"
+            },
+            {
+              "type": "string",
+              "name": "matricula"
+            },
+            {
+              "type": "string",
+              "name": "curso"
+            },
+            {
+              "type": "uint256",
+              "name": "createdAt"
+            }
+          ]
+        },
+        {
+          "type": "bool",
+          "name": "exists"
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "registerIdentity",
+      "constant": false,
+      "payable": false,
+      "inputs": [
+        {
+          "type": "string",
+          "name": "name"
+        },
+        {
+          "type": "string",
+          "name": "matricula"
+        },
+        {
+          "type": "string",
+          "name": "curso"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "type": "function",
+      "name": "updateIdentity",
+      "constant": false,
+      "payable": false,
+      "inputs": [
+        {
+          "type": "string",
+          "name": "name"
+        },
+        {
+          "type": "string",
+          "name": "curso"
+        }
+      ],
+      "outputs": []
+    }
+  ]
+}

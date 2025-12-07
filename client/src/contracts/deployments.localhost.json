@@ -1,0 +1,7 @@
+{
+  "network": "localhost",
+  "chainId": 31337,
+  "deployedAt": "2025-11-18T17:05:41.711Z",
+  "identityRegistry": "0xf01d18d69ED67288D3ba0c880C22414260F88dee",
+  "eventStorage": "0x3e052A6E9564B91605d5a735e4930A79E6c3D3Df"
+}

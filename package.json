@@ -1,0 +1,17 @@
+{
+  "name": "trabalho_blockchain",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "setup:requirements": "node scripts/install-from-requirements.js",
+    "chain": "npm run chain --prefix blockchain",
+    "deploy": "npm run deploy --prefix blockchain",
+    "deploy:sepolia": "npm run deploy:sepolia --prefix blockchain",
+    "test:blockchain": "npm run test --prefix blockchain"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
