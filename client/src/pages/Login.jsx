@@ -272,12 +272,16 @@ export default function Login() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ address: addressToUse, signature }),
       })
+      let payload = {}
+      try {
+        payload = await verifyResponse.json()
+      } catch {
+        payload = {}
+      }
       if (!verifyResponse.ok) {
-        const payload = await verifyResponse.json().catch(() => ({}))
         throw new Error(payload.error || 'Falha ao validar assinatura.')
       }
 
-      const payload = await verifyResponse.json()
       localStorage.setItem('authToken', payload.token)
       localStorage.setItem('walletAddress', payload.address)
       localStorage.setItem('isAdmin', payload.isAdmin ? 'true' : 'false')
