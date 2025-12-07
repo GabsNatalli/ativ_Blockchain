@@ -253,7 +253,7 @@ export default function Login() {
 
       setStatus('Identidade validada. Gerando desafio de assinatura…')
 
-      const nonceResponse = await fetch('/auth/nonce', {
+      const nonceResponse = await fetch(`${import.meta.env.VITE_API_URL}/auth/nonce`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ address: addressToUse }),
@@ -267,7 +267,7 @@ export default function Login() {
       const signer = await getWalletSigner()
       const signature = await signer.signMessage(nonce)
 
-      const verifyResponse = await fetch('/auth/verify', {
+      const verifyResponse = await fetch(`${import.meta.env.VITE_API_URL}/auth/verify`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ address: addressToUse, signature }),
